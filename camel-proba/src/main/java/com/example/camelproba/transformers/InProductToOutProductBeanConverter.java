@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class InProductToOutProductBeanConverter {
 
+  public static final String NO_SUCH_CATEGORY_MSG = "No such category.";
+  public static final String NO_SUCH_OCCASION_MSG = "No such occasion.";
+
   public static OutProduct toOutProduct (InProduct inProduct) {
     OutProduct outProduct = new OutProduct();
     outProduct.setSku(inProduct.getSku());
@@ -21,6 +24,8 @@ public class InProductToOutProductBeanConverter {
       case "Bracelet":
         outProduct.setDepartment("Accessories");
         break;
+      default:
+        throw new IllegalArgumentException(NO_SUCH_CATEGORY_MSG);
     }
     switch (inProduct.getOccasion()){
       case "Casual":
@@ -29,7 +34,10 @@ public class InProductToOutProductBeanConverter {
       case "Formal":
         outProduct.setPackaging("Luxury");
         break;
+      default:
+        throw new IllegalArgumentException(NO_SUCH_OCCASION_MSG);
     }
+
     return outProduct;
   }
 
