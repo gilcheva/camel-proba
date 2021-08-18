@@ -18,7 +18,7 @@ public class FileRoute extends RouteBuilder {
   @Override
   public void configure() throws Exception {
 
-    onException(MismatchedInputException.class, IllegalArgumentException.class)
+    onException(MismatchedInputException.class)
         .useOriginalMessage()
         .log(INCORRECT_JSON_MESSAGE)
         .to("file:D:/error")

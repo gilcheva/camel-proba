@@ -1,0 +1,10 @@
+helloMessage: "Hello prod!"
+
+camel:
+  threadpool:
+    id: prodThreadPoolProfile
+    pool-size: 20
+    max-pool-size: 50
+    max-queue-size: -1
+    allow-core-thread-timeout: true
+    keep-alive-time: 5000

@@ -1,0 +1,10 @@
+helloMessage: "Hello dev!"
+
+camel:
+  threadpool:
+    id: devThreadPoolProfile
+    pool-size: 5
+    max-pool-size: 15
+    max-queue-size: 100
+    allow-core-thread-timeout: true
+    keep-alive-time: 1000

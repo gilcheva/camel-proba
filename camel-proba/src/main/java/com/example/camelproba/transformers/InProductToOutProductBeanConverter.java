@@ -27,6 +27,7 @@ public class InProductToOutProductBeanConverter {
       default:
         throw new IllegalArgumentException(NO_SUCH_CATEGORY_MSG);
     }
+
     switch (inProduct.getOccasion()){
       case "Casual":
         outProduct.setPackaging("Standard");
